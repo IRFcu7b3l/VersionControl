@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserMaintenance.Properties
+namespace UserMaintenance1._0.Properties
 {
 
 

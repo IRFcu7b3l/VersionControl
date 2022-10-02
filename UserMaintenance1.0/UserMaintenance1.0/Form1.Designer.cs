@@ -1,4 +1,4 @@
-﻿namespace UserMaintenance
+﻿namespace UserMaintenance1._0
 {
     partial class Form1
     {

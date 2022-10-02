@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UserMaintenance
+namespace UserMaintenance1._0
 {
     public partial class Form1 : Form
     {
