@@ -64,6 +64,7 @@ namespace _04_cu7b3l
             {
                 xlSheet.Cells[1, i+1] = headers[i];
             }
+            object[,] values = new object[flats.Count, headers.Length];
         }
     }
 }
