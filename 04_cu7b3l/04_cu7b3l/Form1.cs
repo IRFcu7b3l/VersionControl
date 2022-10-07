@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.Data.Entity.Migrations.Model;
+using System.Diagnostics;
 
 namespace _04_cu7b3l
 {
@@ -65,6 +66,21 @@ namespace _04_cu7b3l
                 xlSheet.Cells[1, i+1] = headers[i];
             }
             object[,] values = new object[flats.Count, headers.Length];
+
+            int counter = 0;
+
+            foreach (Flat f in flats)
+            {
+                values[counter, 0]=f.Code;
+                values[counter, 1]=f.Vendor;
+                values[counter, 2]=f.Side;
+                values[counter, 3]=f.District;
+                values[counter, 4] = f.Elevator;
+                values[counter, 5] = f.NumberOfRooms;
+                values[counter, 6] = f.FloorArea;
+                values[counter, 7] = f.Price;
+                counter++;
+            }
         }
     }
 }
