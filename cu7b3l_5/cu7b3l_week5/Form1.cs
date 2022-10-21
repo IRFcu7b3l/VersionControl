@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cu7b3l_week5.MnbServiceReference;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace cu7b3l_week5
 {
     public partial class Form1 : Form
     {
+        
+
         public Form1()
         {
             InitializeComponent();
+            
         }
     }
+    
 }
