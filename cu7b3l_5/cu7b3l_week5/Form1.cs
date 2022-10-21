@@ -1,4 +1,5 @@
-﻿using cu7b3l_week5.MnbServiceReference;
+﻿using cu7b3l_week5.Entities;
+using cu7b3l_week5.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,12 @@ namespace cu7b3l_week5
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> Rates=new BindingList<RateData>();
         public Form1()
         {
             InitializeComponent();
             GetExchangeRates();
+            dataGridView1.DataSource = Rates;
             
         }
         void GetExchangeRates() {
