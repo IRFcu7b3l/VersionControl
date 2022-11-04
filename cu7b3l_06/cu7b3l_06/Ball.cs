@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace cu7b3l_06
 {
-    internal class Ball: Label
+    public class Ball: Label
     {
         public Ball() {
             AutoSize = false;
