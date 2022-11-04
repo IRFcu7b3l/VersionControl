@@ -20,7 +20,7 @@ namespace cu7b3l_06
         {
             get { return _factory; }
             set { _factory = value;
-                     
+                DisplayNext();
             }
         }
 
