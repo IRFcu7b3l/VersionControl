@@ -7,31 +7,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Label = System.Windows.Forms.Label;
 using System.Drawing;
+using cu7b3l_06.Abstractions;
 
 namespace cu7b3l_06
 {
-    public class Ball: Label
+    public class Ball : Toy
     {
-        public Ball() {
-            AutoSize = false;
-            Width = 50;
-            Height = 50;
-            Paint += Ball_Paint;
-
-        }
-
-        private void Ball_Paint(object sender, PaintEventArgs e)
+        protected override void DrawImage(Graphics g)
         {
-            DrawImage(e.Graphics);
+            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+
         }
 
-        protected void DrawImage(Graphics g) { 
-            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        
-        }
-        public void MoveBall() {
-            Left += 1;
-        
-        }
     }
 }
