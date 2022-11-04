@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cu7b3l_06.Abstractions
 {
-    internal interface IToyFactory
+    public interface IToyFactory
     {
         Toy CreateNew();
     }
