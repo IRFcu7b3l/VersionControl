@@ -72,7 +72,7 @@ namespace cu7b3l_07
             sfd.DefaultExt = "csv";
             sfd.AddExtension = true;
 
-            if (sfd.ShowDialog()!=DialogResult.OK)
+            if (sfd.ShowDialog()==DialogResult.OK)
             {
                 using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
                 {
