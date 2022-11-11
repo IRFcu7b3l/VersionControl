@@ -74,11 +74,22 @@ namespace cu7b3l_07
 
             if (sfd.ShowDialog()!=DialogResult.OK)
             {
-                using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8)) {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                {
+                    sw.Write("Időszak");
+                    sw.Write(";");
+                    sw.Write("Nyereség");
                     sw.WriteLine();
+                    int i = 0;
+                
                     foreach (var ny in nyereségekRendezve)
                     {
-                       // sw.Write(ny.)
+                    sw.Write(i.ToString());
+                    sw.Write(";");
+                    sw.Write(ny.ToString());
+                    i++;
+                    sw.WriteLine();
+
                     }
                 
                 } 
