@@ -45,5 +45,24 @@ namespace UnitTestExample.Test
             return regex.IsMatch(password);
         }
 
+        [
+        Test,
+        TestCase("barnabas.horvath3@uni-corvinus.hu", "Abcd1234"),
+        TestCase("barnus.horvath11@gmail.com", "Abcd1234"),
+]
+        public void TestRegisterHappyPath(string email, string password)
+        {
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act
+            var actualResult = accountController.Register(email, password);
+
+            // Assert
+            Assert.AreEqual(email, actualResult.Email);
+            Assert.AreEqual(password, actualResult.Password);
+            Assert.AreNotEqual(Guid.Empty, actualResult.ID);
+        }
+
     }
 }
