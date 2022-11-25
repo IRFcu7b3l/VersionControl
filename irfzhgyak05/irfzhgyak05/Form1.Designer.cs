@@ -1,4 +1,4 @@
-﻿namespace cu7b3l_week5
+﻿namespace irfzhgyak05
 {
     partial class Form1
     {
@@ -32,83 +32,78 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.chartRateData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 32);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 358);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 391);
             this.dataGridView1.TabIndex = 0;
             // 
-            // chartRateData
+            // chart1
             // 
             chartArea1.Name = "ChartArea1";
-            this.chartRateData.ChartAreas.Add(chartArea1);
+            this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chartRateData.Legends.Add(legend1);
-            this.chartRateData.Location = new System.Drawing.Point(549, 32);
-            this.chartRateData.Name = "chartRateData";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(683, 47);
+            this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chartRateData.Series.Add(series1);
-            this.chartRateData.Size = new System.Drawing.Size(509, 358);
-            this.chartRateData.TabIndex = 1;
-            this.chartRateData.Text = "chart1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(486, 387);
+            this.chart1.TabIndex = 1;
+            this.chart1.Text = "chart1";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(343, 0);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(285, 26);
             this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(0, 0);
+            this.dateTimePicker2.Location = new System.Drawing.Point(391, 12);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(286, 26);
             this.dateTimePicker2.TabIndex = 3;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "EUR",
-            "Forint",
-            "USD"});
-            this.comboBox1.Location = new System.Drawing.Point(549, 2);
+            this.comboBox1.Location = new System.Drawing.Point(683, 13);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(337, 28);
+            this.comboBox1.Size = new System.Drawing.Size(241, 28);
             this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1070, 450);
+            this.ClientSize = new System.Drawing.Size(1181, 450);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.chartRateData);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRateData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,10 +111,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartRateData;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
