@@ -29,7 +29,7 @@ namespace cu7b3l_09
                 
                 for (int i = 0; i < Population.Count; i++)
                 {
-                    
+                    SimStep(year, Population[i]);
                 }
 
                 int nbrOfMales = (from x in Population
@@ -43,6 +43,7 @@ namespace cu7b3l_09
             }
         }
         public List<Person> GetPopulation(string csvpath) {
+            List<Person> population = new List<Person>();   
             using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
             {
                 while (!sr.EndOfStream)
@@ -57,7 +58,7 @@ namespace cu7b3l_09
                 }
             }
 
-            return Population;
+            return population;
         }
         public List<BirthProbability> GetBirthProbabilities(string csvpath) {
             List<BirthProbability> birthProbabilities = new List<BirthProbability>();
@@ -74,12 +75,12 @@ namespace cu7b3l_09
                     });
                 }
             }
-            return BirthProbabilities;
+            return birthProbabilities;
 
         }
         public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
-            List<DeathProbability> birthProbabilities = new List<DeathProbability>();
+            List<DeathProbability> deathProbabilities = new List<DeathProbability>();
             using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
             {
                 while (!sr.EndOfStream)
@@ -93,8 +94,38 @@ namespace cu7b3l_09
                     });
                 }
             }
-            return DeathProbabilities;
+            return deathProbabilities;
 
+        }
+        void SimStep(int year, Person person)
+        {
+            if (!person.IsAlive) return;
+            
+            byte age = (byte)(year - person.BirthYear);
+            
+            double deathProbability = (from x in DeathProbabilities
+                             where x.Gender == person.Gender && x.Age == age
+                             select x.Probability).FirstOrDefault();
+            
+            if (rng.NextDouble() <= deathProbability)
+                person.IsAlive = false;
+
+            if (person.IsAlive && person.Gender == Gender.Female)
+            {
+
+                double birthProbability = (from x in BirthProbabilities
+                                 where x.Age == age
+                                 select x.Probability).FirstOrDefault();
+              
+                if (rng.NextDouble() <= birthProbability)
+                {
+                    Person újszülött = new Person();
+                    újszülött.BirthYear = year;
+                    újszülött.NbrOfChildren = 0;
+                    újszülött.Gender = (Gender)(rng.Next(1, 3));
+                    Population.Add(újszülött);
+                }
+            }
         }
     }
 }
